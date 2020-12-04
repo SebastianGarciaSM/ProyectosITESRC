@@ -1,0 +1,124 @@
+﻿<Window x:Class="ElAhorcado.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElAhorcado"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="#FF195C85">
+
+    <Window.Style>
+        <Style>
+            <Setter Property="Window.Visibility" Value="Visible"></Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding MainWindowVisible}" Value="False">
+                    <Setter Property="Window.Visibility" Value="Hidden"></Setter>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Style>
+
+    <Window.DataContext>
+        <local:Juego></local:Juego>
+    </Window.DataContext>
+
+    <DockPanel Margin="15">
+        <Grid DockPanel.Dock="Top">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Arial" FontSize="35" FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect BlurRadius="0"/>
+                </TextBlock.Effect>EL AHORCADO</TextBlock>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <TextBlock Foreground="White" FontFamily="Arial">Ingresa tu nombre de jugador, puedes crear una partida propia o unirte a una partida.</TextBlock>
+        </Grid>
+        <DockPanel>
+            <Border Width="450" Margin="0,10,0,10" BorderBrush="White" BorderThickness="3" CornerRadius="15">
+                <StackPanel Margin="10">
+                    <Label Foreground="White" FontWeight="Bold">Nombre del jugador:</Label>
+                    <TextBox Height="25" VerticalContentAlignment="Center" Foreground="White" Background="#FF195C85" BorderThickness="2" BorderBrush="White" Text="{Binding Jugador1}"></TextBox>
+
+                    <GroupBox Margin="0,15,0,10" Foreground="White" Header="¡COMIENZA A JUGAR!" Padding="10">
+                        <StackPanel>
+                            <StackPanel.Resources>
+                                <Style TargetType="RadioButton">
+                                    <Setter Property="Foreground" Value="White"></Setter>
+                                    <Setter Property="FontSize" Value="15"></Setter>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                                    <Setter Property="FontWeight" Value="Medium"></Setter>
+                                </Style>
+                                <Style TargetType="TextBlock"></Style>
+                            </StackPanel.Resources>
+                            <RadioButton x:Name="rdbCrear" IsChecked="True" Content="Crear partida"></RadioButton>
+                            <WrapPanel Name="ComboCategoria">
+                                <WrapPanel.Style>
+                                    <Style>
+                                        <Setter Property="WrapPanel.Visibility" Value="Collapsed"></Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rdbCrear, Path=IsChecked}" Value="True">
+                                                <Setter Property="WrapPanel.Visibility" Value="Visible"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </WrapPanel.Style>
+                                <TextBlock FontSize="15" Margin="30,0,10,0">Categoría:</TextBlock>
+                                <ComboBox Width="250" SelectedValuePath="Content" SelectedValue="{Binding Path=CategoriaSeleccionada}">
+                                    <ComboBoxItem IsSelected="True" IsEnabled="False" FontStyle="Italic" Opacity="0.5" >-- Seleccione una categoría--</ComboBoxItem>
+                                    <ComboBoxItem Content="Comidas"></ComboBoxItem>
+                                    <ComboBoxItem Content="Oficios"></ComboBoxItem>
+                                    <ComboBoxItem Content="Paises"></ComboBoxItem>
+                                    <ComboBoxItem Content="Razas"></ComboBoxItem>
+                                </ComboBox>
+                            </WrapPanel>
+                            
+                            <RadioButton x:Name="rdbUnirse" Content="Unirse a la partida"></RadioButton>
+
+                            <WrapPanel Name="ipAdversario">
+                                <WrapPanel.Style>
+                                    <Style>
+                                        <Setter Property="WrapPanel.Visibility" Value="Collapsed"></Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rdbUnirse, Path=IsChecked}" Value="True">
+                                                <Setter Property="WrapPanel.Visibility" Value="Visible"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </WrapPanel.Style>
+                                <TextBlock Foreground="White" FontWeight="Bold">IP del adversario:</TextBlock>
+                                <TextBox Text="{Binding IP}" Margin="10,0,0,0" Width="300" Name="txtIp"></TextBox>
+                            </WrapPanel>
+
+                        </StackPanel>
+                    </GroupBox>
+
+                    <Button Command="{Binding IniciarCommand}" CommandParameter="{Binding ElementName=rdbCrear, Path=IsChecked}" Background="#FF195C85" BorderThickness="1" BorderBrush="White" Foreground="White" HorizontalAlignment="Center" HorizontalContentAlignment="Center"  Name="btnIniciar" Content="INICIAR" Width="100" Height="25">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="IsEnabled" Value="False"></Setter>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=rdbCrear, Path=IsChecked}" Value="True">
+                                        <Setter Property="IsEnabled" Value="True"></Setter>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=rdbUnirse, Path=IsChecked}" Value="True">
+                                        <Setter Property="IsEnabled" Value="True"></Setter>
+                                    </DataTrigger>
+
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition  Binding="{Binding ElementName=rdbUnirse, Path=IsChecked}" Value="True"></Condition>
+                                            <Condition  Binding="{Binding ElementName=txtIp, Path=Text}" Value=""></Condition>
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="IsEnabled" Value="False"></Setter>
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Border>
+            <Image Width="250" DockPanel.Dock="Right" Source="Images/juego-del-ahorcado.png"></Image>
+        </DockPanel>
+    </DockPanel>
+</Window>
+
+    

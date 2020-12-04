@@ -1,0 +1,83 @@
+﻿<Window x:Class="ControlAlumnos.vndAgregarAlumno"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ControlAlumnos"
+        mc:Ignorable="d"
+        Title="vndAgregarAlumno" Height="740" Width="700">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top" Background="DarkBlue" Height="60">
+            <Image  Source="logo_marca_agua_TecNM.png" HorizontalAlignment="Left" Height="120" VerticalAlignment="Center">
+                <Image.OpacityMask>
+                    <LinearGradientBrush StartPoint="0.1,0.1" EndPoint="0.75,0.75">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Offset="-3" Color="Black"/>
+                            <GradientStop Offset="2" Color="Transparent"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Image.OpacityMask>
+            </Image>
+            <TextBlock FontSize="30" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="0,0,15,0" FontFamily="Brandon Grotesque" HorizontalAlignment="Right">REGISTRAR ALUMNO</TextBlock>
+            
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="38" Background="DarkBlue">
+            <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Background="White" Name="btnAceptar" Click="btnAceptar_Click">Aceptar</Button>
+                <Button Background="White" Name="btnCancelar" Click="btnCancelar_Click">Cancelar</Button>
+            </WrapPanel>
+        </DockPanel>
+        <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="20" Margin="20">
+            <StackPanel Margin="10">
+                <StackPanel.Resources>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontSize" Value="20"></Setter>
+                        <Setter Property="FontFamily" Value="helvetica"></Setter>
+                        <Setter Property="FontWeight" Value="Medium"></Setter>
+                        <Setter Property="Margin" Value="0,5,0,0"></Setter>
+                    </Style>
+                    <Style TargetType="ComboBoxItem">
+                        <Setter Property="FontSize" Value="20"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Height" Value="30"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <TextBlock>Nombre:</TextBlock>
+                <TextBox Name="txtNombre" Text="{Binding Nombre}"></TextBox>
+                <TextBlock>Número de Control:</TextBlock>
+                <TextBox Name="txtNumeroDeControl" Text="{Binding NumeroDeControl}"></TextBox>
+                <TextBlock>Carrera:</TextBlock>
+                <ComboBox Name="cmbCarrera" Text="{Binding Carrera}" Height="30">
+                    <ComboBoxItem>Sistemas C.</ComboBoxItem>
+                    <ComboBoxItem>Mecatrónica</ComboBoxItem>
+                    <ComboBoxItem>Electromecánica</ComboBoxItem>
+                    <ComboBoxItem>Petrolera</ComboBoxItem>
+                    <ComboBoxItem>Administración</ComboBoxItem>
+                    <ComboBoxItem>Industrial</ComboBoxItem>
+                </ComboBox>
+                <TextBlock>Tipo de sangre:</TextBlock>
+                <ComboBox Name="cmbTipoDeSangre" Text="{Binding TipoDeSangre}" Height="30">
+                    <ComboBoxItem>A+</ComboBoxItem>
+                    <ComboBoxItem>O+</ComboBoxItem>
+                    <ComboBoxItem>B+</ComboBoxItem>
+                    <ComboBoxItem>AB+</ComboBoxItem>
+                    <ComboBoxItem>A-</ComboBoxItem>
+                    <ComboBoxItem>O-</ComboBoxItem>
+                    <ComboBoxItem>B-</ComboBoxItem>
+                    <ComboBoxItem>AB-</ComboBoxItem>
+                </ComboBox>
+                <TextBlock>Número de Seguro Social:</TextBlock>
+                <TextBox Name="txtPrecio" Text="{Binding NumeroSeguroSocial}"></TextBox>
+                <TextBlock>Servicio médico:</TextBlock>
+                <TextBox Name="txtServicioMedico" Text="{Binding ServicioMedico}"></TextBox>
+                <WrapPanel>
+                    <TextBlock>Foto:</TextBlock>
+                </WrapPanel>
+                <TextBlock Name="txtRuta" FontStyle="Italic" FontSize="15"></TextBlock>
+                <Image Margin="10" Height="120" Name="imgFoto" Source="{Binding Image}" MouseLeftButtonDown="imgFoto_MouseLeftButtonDown" Cursor="Hand"></Image>
+            </StackPanel>
+        </Border>
+    </DockPanel>
+</Window>
