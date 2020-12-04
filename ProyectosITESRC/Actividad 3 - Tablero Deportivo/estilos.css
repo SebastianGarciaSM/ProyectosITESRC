@@ -1,0 +1,87 @@
+﻿@font-face {
+    font-family: vcrfont;
+    src: url(Fonts/VCR_OSD_MONO_1.001.ttf);
+}
+
+*
+{
+    box-sizing:border-box;
+}
+
+body
+{
+    background-color:black;
+}
+
+header
+{
+    font-family:vcrfont;
+    margin:auto;
+    text-align:center;
+}
+
+    header h1, header h2, header h3 {
+        display: block;
+        margin: auto;
+        color: white;
+        text-transform: uppercase;
+        font-size: 15px;
+        text-shadow: 0 0 18px lightgray;
+    }
+
+form input
+{
+    display:block;
+}
+
+body > label {
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin: 50px 0;
+    font-family: vcrfont;
+    text-transform: uppercase;
+    font-size: 35px;
+    color: dodgerblue;
+    text-shadow: 0 0 25px lightblue;
+}
+
+fieldset
+{
+    margin:50px 0;
+    border-radius:50px;
+    border:5px solid white;
+    padding:20px;
+    width:70%;
+    margin:auto;
+}
+
+    fieldset > label {
+        text-align: center;
+        margin: auto;
+        display: block;
+        font-family: Arial;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+fieldset input
+{
+    margin:auto;
+    display:block;
+
+}
+
+footer label {
+    position: fixed;
+    bottom: 0;
+    margin: auto;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-family: Arial;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: white;
+}

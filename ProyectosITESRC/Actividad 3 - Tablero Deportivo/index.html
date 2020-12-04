@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tablero Deportivo</title>
+    <link href="estilos.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <header>
+        <h1>Tablero Deportivo</h1>
+        <h2>Unidad 2 - Actividad 3</h2>
+        <h3>Desarrollo de Aplicaciones Cliente/Servidor</h3>
+    </header>
+    <label><b>¡Bienvenido al Tablero Deportivo!</b></label>
+    <fieldset>
+        <label>Da clic a un botón para aumentar un valor al puntaje, faltas o periodo de juego.</label>
+        <form method="post">
+            <input type="submit" name="dato" value="Periodo"/><br />
+            <input type="submit" name="dato" value="Local" /><br />
+            <input type="submit" name="dato" value="Faltas Local" /><br />
+            <input type="submit" name="dato" value="Visita" /><br />
+            <input type="submit" name="dato" value="Faltas Visita" />
+        </form>
+    </fieldset>
+    <footer>
+        <label>Proyecto realizado por: <b>Sebastian Garcia San Miguel</b></label><br />
+    </footer>
+</body>
+</html>
+
+<style>
+    @font-face {
+        font-family: vcrfont;
+        src: url(http://localhost:1000/Fonts/vcr_osd_mono_1.001-webfont.woff) format('woff');
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    header {
+        font-family: vcrfont;
+        margin: auto;
+        text-align: center;
+    }
+
+        header h1, header h2, header h3 {
+            display: block;
+            margin: auto;
+            color: white;
+            text-transform: uppercase;
+            font-size: 15px;
+            text-shadow: 0 0 18px lightgray;
+        }
+
+    form input {
+        display: block;
+    }
+
+    body > label {
+        margin: auto;
+        display: block;
+        text-align: center;
+        margin: 50px 0;
+        font-family: vcrfont;
+        text-transform: uppercase;
+        font-size: 35px;
+        color: dodgerblue;
+        text-shadow: 0 0 25px lightblue;
+    }
+
+    fieldset {
+        margin: 50px 0;
+        border-radius: 50px;
+        border: 5px solid white;
+        padding: 20px;
+        width: 70%;
+        margin: auto;
+    }
+
+        fieldset > label {
+            text-align: center;
+            margin: auto;
+            display: block;
+            font-family: Arial;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        fieldset input {
+            margin: auto;
+            display: block;
+        }
+
+    footer label {
+        position: fixed;
+        bottom: 0;
+        margin: auto;
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-family: Arial;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 15px;
+        color: white;
+    }
+</style>

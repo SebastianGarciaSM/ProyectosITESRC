@@ -1,0 +1,110 @@
+﻿<Window x:Class="Actividad_4___Vuelos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Actividad_4___Vuelos"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="900" MaxHeight="600" MaxWidth="1000" Background="WhiteSmoke">
+    <DockPanel>
+        <!--<Border DockPanel.Dock="Top" HorizontalAlignment="Left" Height="80" Background="White">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="avion.png" Height="50" VerticalAlignment="Center"></Image>
+            <Label FontSize="35" FontFamily="Arial" FontWeight="Bold" Foreground="DodgerBlue" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1">SALIDAS Y LLEGADAS DE VUELOS</Label>
+            </Grid>
+        </Border>-->
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Background="White" CornerRadius="40" Height="75" Width="700" HorizontalAlignment="Left" Margin="15,10,0,10">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+                </Border.Effect>
+                <TextBlock Foreground="SlateGray" FontFamily="Arial" VerticalAlignment="Center" Margin="120,0,0,0" FontSize="30" FontWeight="Bold">SALIDAS Y LLEGADAS DE AVIONES</TextBlock>
+            </Border>
+            <Border Background="White" CornerRadius="100" Height="95" Width="95" BorderBrush="SlateGray" BorderThickness="2" HorizontalAlignment="Left" Margin="15,10,0,10">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="18
+                                      " Color="LightGray"/>
+                </Border.Effect>
+                <Image Source="avion.png" Height="65" Width="65"></Image>
+            </Border>
+        </Grid>
+        <Border DockPanel.Dock="Bottom" Height="50" Background="White" CornerRadius="30,30,0,0">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+            </Border.Effect>
+            <UniformGrid Margin="10,0,10,0" Columns="4">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="003-enter.png" Height="30"></Image>
+                    <Button Name="btnNuevo" Click="btnNuevo_Click" Background="White" BorderThickness="0" Content="NUEVO" Height="30" FontSize="20" Width="100"></Button>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="seo-social-web-network-internet_189_icon-icons.com_61521.png" Height="30"></Image>
+                    <Button Name="btnAgregar" Click="btnAgregar_Click" Background="White" BorderThickness="0" Content="AGREGAR" Height="30" FontSize="20" Width="100"></Button>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="writing-on-an-open-book.png" Height="40"></Image>
+                    <Button Name="btnEditar" Click="btnEditar_Click" Background="White" BorderThickness="0" Content="EDITAR" Height="30" FontSize="20" Width="100"></Button>
+                </WrapPanel>
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="deletebutton_80861.png" Height="30"></Image>
+                    <Button Name="btnEliminar" Click="btnEliminar_Click" Background="White"  BorderThickness="0" Content="ELIMINAR" Height="30" FontSize="20" Width="100"></Button>
+                </WrapPanel>
+            </UniformGrid>
+        </Border>
+        <UniformGrid Margin="15,5,15,15" Columns="2">
+            <StackPanel Margin="0,0,20,0" VerticalAlignment="Top">
+                <Label FontFamily="Arial" Foreground="SlateGray" FontWeight="Bold" FontSize="15">HORA:</Label>
+                <TextBox Name="txtHora" BorderThickness="0" Text="{Binding Hora}" Height="25" VerticalContentAlignment="Center" Margin="0,0,0,15">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <Label FontFamily="Arial" Foreground="SlateGray" FontWeight="Bold" FontSize="15">DESTINO:</Label>
+                <TextBox Name="txtDestino" BorderThickness="0" Text="{Binding Destino}" Height="25" VerticalContentAlignment="Center" Margin="0,0,0,15">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <Label FontFamily="Arial" Foreground="SlateGray" FontWeight="Bold" FontSize="15">VUELO:</Label>
+                <TextBox Name="txtVuelo" BorderThickness="0" Text="{Binding Vuelo}" Height="25" VerticalContentAlignment="Center" Margin="0,0,0,15">
+                    <TextBox.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+                    </TextBox.Effect>
+                </TextBox>
+
+                <Label FontFamily="Arial" Foreground="SlateGray" FontWeight="Bold" FontSize="15">ESTADO:</Label>
+                <ComboBox Name="cmbEstado" BorderThickness="0" Text="{Binding Estado}">
+                    <ComboBox.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="12
+                                      " Color="LightGray"/>
+                    </ComboBox.Effect>
+                    <ComboBoxItem>A TIEMPO</ComboBoxItem>
+                    <ComboBoxItem>ABORDANDO</ComboBoxItem>
+                    <ComboBoxItem>CANCELADO</ComboBoxItem>
+                    <ComboBoxItem>RETRASADO</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            <DataGrid SelectionChanged="dtgVuelos_SelectionChanged" Margin="0,0,0,0" BorderThickness="0" IsReadOnly="True"
+                      SelectedItem="{Binding Path=vd}" Name="dtgVuelos" >
+                <DataGrid.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="12"
+                                      Color="LightGray"/>
+                </DataGrid.Effect>
+            </DataGrid>
+        </UniformGrid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,83 @@
+﻿<Window x:Class="Actividad_3___Tablero_Deportivo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Actividad_3___Tablero_Deportivo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900" MaxHeight="450" MaxWidth="900">
+    <UniformGrid Rows="2" Background="Black">
+        <UniformGrid Columns="3" Margin="15,15,15,7.5">
+            <UniformGrid.Background>
+                <ImageBrush ImageSource="pantallaled.jpg" Opacity="0.5" Stretch="UniformToFill"/>
+            </UniformGrid.Background>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label BorderBrush="White" BorderThickness="1" Foreground="MediumPurple" FontFamily="VCR OSD mono" FontSize="70" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="MediumPurple" Direction="0" BlurRadius="30" Opacity="0.9" ShadowDepth="0"/>
+                    </Label.Effect> LOCAL</Label>
+                <TextBlock Text="{Binding DatoLocal}" Foreground="MediumPurple" FontFamily="VCR OSD mono" FontSize="100" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="MediumPurple" Direction="0" BlurRadius="30" Opacity="0.9" ShadowDepth="0"/>
+                    </TextBlock.Effect></TextBlock>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Margin="0,0,0,15" Foreground="White" FontFamily="VCR OSD mono" FontSize="50" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="White" Direction="0" BlurRadius="30" Opacity="0.9" ShadowDepth="0"/>
+                    </Label.Effect> PERIODO</Label>
+                <TextBlock Text="{Binding DatoPeriodo}" Foreground="DarkOrange" FontFamily="VCR OSD mono" FontSize="100" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkOrange" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </TextBlock.Effect></TextBlock>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label BorderBrush="White" BorderThickness="1" Foreground="DodgerBlue" FontFamily="VCR OSD mono" FontSize="70" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="DodgerBlue" Direction="0" BlurRadius="30" Opacity="0.9" ShadowDepth="0"/>
+                    </Label.Effect> VISITA</Label>
+                <TextBlock Text="{Binding DatoVisita}" Foreground="DodgerBlue" FontFamily="VCR OSD mono" FontSize="100" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DodgerBlue" Direction="0" BlurRadius="30" Opacity="0.9" ShadowDepth="0"/>
+                    </TextBlock.Effect></TextBlock>
+            </StackPanel>
+        </UniformGrid>
+        <UniformGrid Columns="3" Margin="15,7.5,15,15">
+            <UniformGrid.Background>
+                <ImageBrush ImageSource="pantallaled.jpg" Opacity="0.5" Stretch="UniformToFill"/>
+            </UniformGrid.Background>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding DatoFaltasLocal}" Foreground="DarkOrange" FontFamily="VCR OSD mono" FontSize="60" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkOrange" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <Label Foreground="White" FontFamily="VCR OSD mono" FontSize="30" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="White" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </Label.Effect>FALTAS</Label>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock x:Name="txtTiempo" Foreground="Red" FontFamily="VCR OSD mono" FontSize="60" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="Red" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </TextBlock.Effect>00:00:00</TextBlock>
+                <Label Foreground="White" FontFamily="VCR OSD mono" FontSize="30" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="White" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </Label.Effect>TIEMPO</Label>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="{Binding DatoFaltasVisita}" Foreground="DarkOrange" FontFamily="VCR OSD mono" FontSize="60" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect Color="DarkOrange" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <Label Foreground="White" FontFamily="VCR OSD mono" FontSize="30" HorizontalAlignment="Center">
+                    <Label.Effect>
+                        <DropShadowEffect Color="White" Direction="0" BlurRadius="30" Opacity="0.8" ShadowDepth="0"/>
+                    </Label.Effect>FALTAS</Label>
+            </StackPanel>
+        </UniformGrid>
+    </UniformGrid>
+</Window>
