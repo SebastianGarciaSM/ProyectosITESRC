@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" id="htmlRegistro">
+<head>
+    <meta charset="utf-8" />
+    <title>Life's Art | Registro</title>
+    <link href="css/fontawesome.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="Images/lifesart.png" />
+    <script src="FunctionsJS.js" type="text/javascript"></script>
+</head>
+<body>
+    <header>
+        <a id="LAlogo" href="Index.html"></a>
+        <h1><a id="FuenteLA" href="Index.html">Life's Art</a></h1>
+        <a id="IniciarSesion" href="IniciarSesion.html">Iniciar Sesión</a>
+        <nav class="desplegable">
+            <label for="checkdesplegable"><i class="fa fa-bars"></i></label>
+            <input type="checkbox" id="checkdesplegable" />
+            <div class="panel">
+                <ul>
+                    <li><a href="DiseñoGrafico.html">Diseño Gráfico</a></li>
+                    <li><a href="Fotografia.html">Fotografía</a></li>
+                    <li><a href="MotionGraphics.html">Motion Graphics</a></li>
+                    <li><a href="Contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form id="diseñoRegistro">
+            <h3 id="registrate">Regístrate</h3>
+            <label class="lblRegistro">Nombre:</label><br />
+            <input class="txtRegistro" type="text" id="txtNombre"/><br />
+            <label class="lblRegistro">Apellidos:</label><br />
+            <input class="txtRegistro" type="text" id="txtApellidos"/><br />
+            <label class="lblRegistro">Correo electrónico:</label><br />
+            <input class="txtRegistro" type="email" id="txtCorreo"/><br />
+            <label class="lblRegistro">Contraseña:</label><br />
+            <input class="txtRegistro" type="password" id="txtPassword"/><br />
+            <label class="lblRegistro">Confirmar contraseña:</label><br />
+            <input class="txtRegistro" type="password" id="txtConfirmarPassword"/><br />
+            <input id="btnIniciarSesion" type="submit" value="Registrarse" onclick="registrarUsuario()" />
+            <a href="IniciarSesion.html" id="linkIniciarSesion">¿Ya tienes una cuenta? ¡Inicia sesión!</a>
+        </form>
+    </main>
+    <footer>
+        Al unirte aceptas nuestras políticas de privacidad.
+    </footer>
+</body>
+</html>
