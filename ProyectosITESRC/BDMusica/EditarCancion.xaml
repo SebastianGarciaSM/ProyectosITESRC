@@ -1,0 +1,155 @@
+﻿<Window x:Class="BDMusica.EditarCancion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDMusica"
+        mc:Ignorable="d"
+        Title="EditarCancion" Height="450" Width="500" Loaded="Window_Loaded">
+    <DockPanel>
+        <DockPanel.Resources>
+            <LinearGradientBrush x:Key="ColorNormal" StartPoint="0,0" EndPoint="0,1">
+                <GradientBrush.GradientStops>
+                    <GradientStopCollection>
+                        <GradientStop Color="#FFF" Offset="0.0"/>
+                        <GradientStop Color="#CCC" Offset="1.0"/>
+                    </GradientStopCollection>
+                </GradientBrush.GradientStops>
+            </LinearGradientBrush>
+
+            <LinearGradientBrush x:Key="ColorDeBordeNormal" StartPoint="0,0" EndPoint="0,1">
+                <GradientBrush.GradientStops>
+                    <GradientStopCollection>
+                        <GradientStop Color="#CCC" Offset="0.0"/>
+                        <GradientStop Color="#444" Offset="1.0"/>
+                    </GradientStopCollection>
+                </GradientBrush.GradientStops>
+            </LinearGradientBrush>
+
+            <Style x:Key="EstiloEjemplo" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="Border" 
+                                CornerRadius="10"
+                                BorderThickness="3"
+                                Width="80"
+                                Height="30"
+                                BorderBrush="#C1272D" >
+                                <ContentPresenter
+                                Margin="2"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                RecognizesAccessKey="True"/>
+
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter TargetName="Border" Property="Background" >
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#FFF" Offset="0.0"/>
+                                                        <GradientStop Color="#AAA" Offset="1.0"/>
+                                                    </GradientStopCollection>
+                                                </GradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+
+                                <Trigger Property="IsPressed" Value="true">
+                                    <Setter TargetName="Border" Property="Background">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#BBB" Offset="0.0"/>
+                                                        <GradientStop Color="#EEE" Offset="0.1"/>
+                                                        <GradientStop Color="#EEE" Offset="0.9"/>
+                                                        <GradientStop Color="#FFF" Offset="1.0"/>
+                                                    </GradientStopCollection>
+                                                </GradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+
+                                    <Setter TargetName="Border" Property="BorderBrush">
+                                        <Setter.Value>
+                                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                                <GradientBrush.GradientStops>
+                                                    <GradientStopCollection>
+                                                        <GradientStop Color="#CCC" Offset="0.0"/>
+                                                        <GradientStop Color="#444" Offset="1.0"/>
+                                                    </GradientStopCollection>
+                                                </GradientBrush.GradientStops>
+                                            </LinearGradientBrush>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </DockPanel.Resources>
+        <Grid DockPanel.Dock="Top" Margin="10,0,10,0">
+            <Rectangle Fill="#C1272D" Height="35" RadiusX="20" RadiusY="55"></Rectangle>
+            <Label Foreground="White" FontSize="25" FontWeight="Bold" FontFamily=" Brandon Grotesque" Margin="15">EDITAR CANCIÓN</Label>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Margin="10,5,10,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="180"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label HorizontalContentAlignment="Left" HorizontalAlignment="Left" Foreground="#C1272D" FontSize="12" FontWeight="Bold" FontFamily="Arial" VerticalAlignment="Center">Modifique la información de la canción a agregar.</Label>
+            <WrapPanel Grid.Column="1" HorizontalAlignment="Right"  VerticalAlignment="Center">
+                <Button Name="btnAceptat" Click="BtnAceptat_Click" Style="{StaticResource EstiloEjemplo}" Margin="5" Height="50" Background="Transparent" Foreground="#C1272D" FontSize="10" FontWeight="Bold">ACEPTAR</Button>
+                <Button Name="btnCancelar" Click="BtnCancelar_Click" Style="{StaticResource EstiloEjemplo}" Margin="5" Height="50" Background="Transparent" Foreground="Gray" FontSize="10" FontWeight="Bold">CANCELAR</Button>
+            </WrapPanel>
+        </Grid>
+        <Grid Margin="5,0,5,0">
+            <Rectangle RadiusX="10" RadiusY="10" Stroke="#C1272D" StrokeThickness="5" Margin="5,0,5,0"></Rectangle>
+            <Grid Margin="20,15,20,15">
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontSize" Value="15"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                        <Setter Property="Foreground" Value="#C1272D"></Setter>
+                        <Setter Property="FontFamily" Value="Arial"></Setter>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="Height" Value="25"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="FontFamily" Value="Arial"></Setter>
+                        <Setter Property="FontSize" Value="15"></Setter>
+                    </Style>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label>Nombre:</Label>
+                <Label Grid.Row="1">Duración:</Label>
+                <Label Grid.Row="2">Álbum:</Label>
+                <Label Grid.Row="3">Categoría:</Label>
+                <Label Grid.Row="4">Artista:</Label>
+                <TextBox Grid.Column="1" Text="{Binding NombreCancion}"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Duracion}"></TextBox>
+                <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Album}"></TextBox>
+                <ComboBox Name="cmbCategoria" DisplayMemberPath="NombreCategoria" SelectedValuePath="IdCategoria" SelectedValue="{Binding Path=IdCategoria}" Height="25" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" ></ComboBox>
+                <ComboBox Name="cmbArtista" DisplayMemberPath="NombreArtista" SelectedValuePath="IdArtista"  SelectedValue="{Binding Path=IdArtista}" Height="25" VerticalAlignment="Center" Grid.Column="1" Grid.Row="4"></ComboBox>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>
