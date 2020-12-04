@@ -1,0 +1,403 @@
+﻿<Window x:Class="PacManGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PacManGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="630" Width="535" Background="Black">
+    <Window.Resources>
+        <PathGeometry x:Key="Animation1"
+      Figures="M20,5 A10,10 90 1 0 20,15 L11,10 Z">
+            <PathGeometry.Transform>
+                <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+            </PathGeometry.Transform>
+        </PathGeometry>
+    </Window.Resources>
+    <Canvas>
+        <Canvas.RenderTransform>
+            <ScaleTransform ScaleX="1.5" ScaleY="1.5"></ScaleTransform>
+        </Canvas.RenderTransform>
+        <!--Data-->
+        <Label Canvas.Left="25" Canvas.Top="5" Foreground="White" FontSize="20" FontFamily="Coder's Crux">1UP</Label>
+        <Label Canvas.Left="65" Canvas.Top="5" Foreground="White" FontSize="20" FontFamily="Coder's Crux">3810</Label>
+        <Label Canvas.Left="200" Canvas.Top="5" Foreground="White" FontSize="20" FontFamily="Coder's Crux">HIGH SCORE</Label>
+        <Label Canvas.Left="285" Canvas.Top="5" Foreground="White" FontSize="20" FontFamily="Coder's Crux">4360</Label>
+        <Image Canvas.Left="290" Canvas.Top="360" Source="cereza.png" Height="20"></Image>
+        <Image Canvas.Left="35" Canvas.Top="360" Source="pngfind.com-pacman-pixel-png-1375929.png" Height="20"></Image>
+        <Image Canvas.Left="60" Canvas.Top="360" Source="pngfind.com-pacman-pixel-png-1375929.png" Height="20"></Image>
+        
+        <!--Stage-->
+        <Path Stroke="DodgerBlue" StrokeThickness="1.5" StrokeLineJoin="Round"
+              Data="
+                  M30,30 H320 V170 H260 V130 H310 V40 H180 V80 H170 V40 H40 V130 H90 V170 H30 V30 Z
+                  M30,190 H90 V230 H40 V280 H60 V290 H40 V340 H310 V290 H290 V280 H310 V230 H260 V190 H320 V350 H30 V190 Z
+              M60,60 H90 V80 H60 Z
+              M110,60 H150 V80 H110 Z
+              M200,60 H240 V80 H200 Z
+              M260,60 H290 V80 H260 Z
+              M60,100 H90 V110 H60 Z
+              M110,100 H120 V130 H150 V140 H120 V170 H110 Z
+              M140,100 H210 V110 H180 V140 H170 V110 H140 Z
+              M230,100 H240 V170 H230 V140 H200 V130 H230 Z
+              M260,100 H290 V110 H260 Z
+              M110,190 H120 V230 H110 Z
+              M230,190 H240 V230 H230 Z
+              M140,220 H210 V230 H180 V260 H170 V230 H140 Z
+              M60,250 H90 V290 H80 V260 H60 Z
+              M110,250 H150 V260 H110 Z
+              M200,250 H240 V260 H200 Z
+              M260,250 H290 V260 H270 V290 H260 Z
+              M60,310 H110 V280 H120 V310 H150 V320 H60 Z
+              M140,280 H210 V290 H180 V320 H170 V290 H140 Z
+              M200,310 H230 V280 H240 V310 H290 V320 H200 Z
+              M160,160 H140 V200 H210 V160 H190
+                  ">
+        </Path>
+        <Rectangle Canvas.Left="160" Canvas.Top="159" Stroke="White" Height="2" Width="30"></Rectangle>
+        
+        <!--Dots-->
+        <Canvas>
+            <Canvas.Resources>
+                <Style TargetType="Ellipse">
+                    <Setter Property="Fill" Value="Bisque"></Setter>
+                </Style>
+            </Canvas.Resources>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="97.5" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="97.5" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="97.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="85" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="72.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="60" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="110" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="145" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="127.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="187.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="187.5" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="187.5" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="200" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="217.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="235" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="247.5" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="247.5" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="247.5" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="260" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="285" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="273" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="47.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="60"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="72"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="260" Canvas.Top="87.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="273" Canvas.Top="87.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="285" Canvas.Top="87.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="87.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="102.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="117.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="285" Canvas.Top="117.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="273" Canvas.Top="117.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="260" Canvas.Top="117.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="237.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="60" Canvas.Top="237.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="72.5" Canvas.Top="237.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="85" Canvas.Top="237.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="252.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="266.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="297.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="312.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="47.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="60" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="72.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="85" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="97.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="110" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="127.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="145" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="172.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="187.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="200" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="217.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="235" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="247.5" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="260" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="273" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="285" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="327.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="312.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="297" Canvas.Top="297.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="312.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="157.5" Canvas.Top="297.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="145" Canvas.Top="297.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="127.5" Canvas.Top="297.5"  Width="5" Height="5"></Ellipse>
+            <Ellipse Canvas.Left="127.5" Canvas.Top="282.5"  Width="5" Height="5"></Ellipse>
+
+        </Canvas>
+        
+        <!--Ghosts-->
+        <!--BlueGhost-->
+        <Image Name="imgBlueGhost" Opacity="0" Canvas.Left="293" Canvas.Top="233" Source="BlueGhost.png" Height="15">
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" x:Name="TranslateBlueGhost"></TranslateTransform>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever" >
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateBlueGhost" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="-50" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-50" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-100" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateBlueGhost" Storyboard.TargetProperty="Y">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-150" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="imgBlueGhost">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:1"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:16"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+        <!--Pink-->
+        <Image Name="imgPinkGhost" Opacity="0" Canvas.Left="93" Canvas.Top="83" Source="PinkGhost.png" Height="15">
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" x:Name="TranslatePinkGhost"></TranslateTransform>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever" >
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:12" Storyboard.TargetName="TranslatePinkGhost" Storyboard.TargetProperty="Y">
+                                <LinearDoubleKeyFrame Value="200" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="imgPinkGhost">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:1"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+        <!--OrangeGhost-->
+        <Image Name="imgOrangeGhost" Opacity="0" Canvas.Left="183" Canvas.Top="323" Source="OrangeGhost.png" Height="15">
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" x:Name="TranslateOrangeGhost"></TranslateTransform>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever" >
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateOrangeGhost" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateOrangeGhost" Storyboard.TargetProperty="Y">
+                                <LinearDoubleKeyFrame Value="-30" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-30" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-60" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-60" KeyTime="0:0:12"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="-90" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="imgOrangeGhost">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:1"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:16"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+        <!--RedGhost-->
+        <Image Name="imgRedGhost" Opacity="0" Canvas.Left="43" Canvas.Top="83" Source="RedGhost.png" Height="15">
+            <Image.RenderTransform>
+                <TranslateTransform X="0" Y="0" x:Name="TranslateRedGhost"></TranslateTransform>
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever" >
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateRedGhost" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="80" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="80" KeyTime="0:0:5"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="110" KeyTime="0:0:7"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="110" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="170" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="170" KeyTime="0:0:13"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="200" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslateRedGhost" Storyboard.TargetProperty="Y">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:3"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:5"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:7"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="60" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="60" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="90" KeyTime="0:0:13"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="imgRedGhost">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:1"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:16"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+
+
+        <Path Name="PacMan" Canvas.Left="92" Canvas.Top="232" Opacity="0" Fill="Yellow" Data="M20,6 A10.1,10.5 90 1 0 20,14 L11,10 Z">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                    <TranslateTransform X="0" Y="0" x:Name="TranslatePacMan"></TranslateTransform>
+                    <RotateTransform Angle="0" CenterX="0" CenterY="0" x:Name="RotatePacMan"></RotateTransform>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslatePacMan" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:3" Storyboard.TargetName="PacMan" Storyboard.TargetProperty="Opacity">
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+        <Path Name="PacMan2" Canvas.Left="122.5" Canvas.Top="228" Opacity="0" Fill="Yellow" Data="M20,6 A10.1,10.5 90 1 0 20,14 L11,10 Z">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                    <TranslateTransform X="0" Y="0" x:Name="TranslatePacMan2"></TranslateTransform>
+                    <RotateTransform Angle="-90" CenterX="10" CenterY="10" x:Name="RotatePacMan2"></RotateTransform>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslatePacMan2" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="90" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:6" Storyboard.TargetName="PacMan2" Storyboard.TargetProperty="Opacity">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:2"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+        <Path Name="PacMan3" Canvas.Left="122" Canvas.Top="142" Opacity="0" Fill="Yellow" Data="M20,6 A10.1,10.5 90 1 0 20,14 L11,10 Z">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                    <TranslateTransform X="0" Y="0" x:Name="TranslatePacMan3"></TranslateTransform>
+                    <RotateTransform Angle="0" CenterX="0" CenterY="0" x:Name="RotatePacMan3"></RotateTransform>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslatePacMan3" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="60" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:9" Storyboard.TargetName="PacMan3" Storyboard.TargetProperty="Opacity">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:6"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+        <Path Name="PacMan4" Canvas.Left="182" Canvas.Top="157" Opacity="0" Fill="Yellow" Data="M20,6 A10.1,10.5 90 1 0 20,14 L11,10 Z">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                    <TranslateTransform X="0" Y="0" x:Name="TranslatePacMan4"></TranslateTransform>
+                    <RotateTransform Angle="-90" CenterX="0" CenterY="0" x:Name="RotatePacMan4"></RotateTransform>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslatePacMan4" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:11" Storyboard.TargetName="PacMan4" Storyboard.TargetProperty="Opacity">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:9"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+        <Path Name="PacMan5" Canvas.Left="182" Canvas.Top="112" Opacity="0" Fill="Yellow" Data="M20,6 A10.1,10.5 90 1 0 20,14 L11,10 Z">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="0.8" ScaleY="0.8"></ScaleTransform>
+                    <TranslateTransform X="0" Y="0" x:Name="TranslatePacMan5"></TranslateTransform>
+                    <RotateTransform Angle="0" CenterX="0" CenterY="0" x:Name="RotatePacMan5"></RotateTransform>
+                </TransformGroup>
+            </Path.RenderTransform>
+            <Path.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever">
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="TranslatePacMan5" Storyboard.TargetProperty="X">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="30" KeyTime="0:0:13"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                            <DoubleAnimationUsingKeyFrames Duration="0:0:16" Storyboard.TargetName="PacMan5" Storyboard.TargetProperty="Opacity">
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:11"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="1" KeyTime="0:0:15"></LinearDoubleKeyFrame>
+                                <LinearDoubleKeyFrame Value="0" KeyTime="0:0:16"></LinearDoubleKeyFrame>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Path.Triggers>
+        </Path>
+    </Canvas>
+</Window>

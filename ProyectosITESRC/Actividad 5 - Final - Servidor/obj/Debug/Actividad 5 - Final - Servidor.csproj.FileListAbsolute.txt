@@ -1,0 +1,18 @@
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\bin\Debug\Actividad 5 - Final - Servidor.exe.config
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\bin\Debug\Actividad 5 - Final - Servidor.exe
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\bin\Debug\Actividad 5 - Final - Servidor.pdb
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\MainWindow.g.cs
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\App.g.cs
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor_MarkupCompile.cache
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor_MarkupCompile.lref
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\MainWindow.baml
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.g.resources
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad_5___Final___Servidor.Properties.Resources.resources
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.csproj.GenerateResource.cache
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.csproj.CoreCompileInputs.cache
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.csproj.CopyComplete
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.exe
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.pdb
+C:\Users\Sebastián\source\repos\AplicacionesClienteServidor\Actividad 5 - Final - Servidor\obj\Debug\Actividad 5 - Final - Servidor.csprojAssemblyReference.cache

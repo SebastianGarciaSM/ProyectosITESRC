@@ -1,0 +1,72 @@
+﻿<Window x:Class="Actividad_5___Final___Cliente.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Actividad_5___Final___Cliente"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600" MaxHeight="500" MaxWidth="600" MinHeight="500" MinWidth="600">
+    <DockPanel>
+        <Grid Background="Black" Height="50" DockPanel.Dock="Top">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image  Source="Images/hotopic.png" Height="25"></Image>
+                <Label Foreground="White" Margin="5,0,5,0" FontSize="15">|</Label>
+                <Label VerticalAlignment="Center" Foreground="White" FontSize="15" FontFamily="Arial" FontWeight="Bold">INFORMACIÓN DE PRODUCTO</Label>
+            </WrapPanel>
+        </Grid>
+        <UniformGrid Columns="3" Background="Black" Height="50" DockPanel.Dock="Bottom">
+            <UniformGrid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="BorderThickness" Value="0"></Setter>
+                    <Setter Property="Height" Value="25"></Setter>
+                    <Setter Property="Width" Value="80"></Setter>
+                    <Setter Property="FontSize" Value="15"></Setter>
+                </Style>
+            </UniformGrid.Resources>
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="Images/066-plus.png" Height="30"></Image>
+                <Button Name="btnAgregar" Click="btnAgregar_Click" Content="AGREGAR"></Button>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="images/062-pencil.png" Height="30"></Image>
+                <Button Name="btnEditar" Click="btnEditar_Click" Content="EDITAR"></Button>
+            </WrapPanel>
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="images/056-minus.png" Height="30"></Image>
+                <Button Name="btnEliminar" Click="btnEliminar_Click" Content="ELIMINAR"></Button>
+            </WrapPanel>
+        </UniformGrid>
+        <Border BorderBrush="Black" BorderThickness="2" Margin="20" CornerRadius="10">
+            <StackPanel Margin="10" VerticalAlignment="Center">
+                <StackPanel.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontFamily" Value="Arial"></Setter>
+                        <Setter Property="FontSize" Value="13"></Setter>
+                        <Setter Property="Margin" Value="10,5,10,-3"></Setter>
+                        <Setter Property="FontWeight" Value="Bold"></Setter>
+                    </Style>
+                    <Style TargetType="TextBox">
+                        <Setter Property="FontFamily" Value="Arial"></Setter>
+                        <Setter Property="Height" Value="25"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+                        <Setter Property="BorderBrush" Value="LightGray"></Setter>
+                        <Setter Property="BorderThickness" Value="2"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Label>▪ CÓDIGO DE PRODUCTO:</Label>
+                <TextBox Text="{Binding Codigo}"></TextBox>
+                <Label>▪ NOMBRE DE PRODUCTO:</Label>
+                <TextBox Text="{Binding NombreProducto}"></TextBox>
+                <Label>▪ TALLA:</Label>
+                <TextBox Text="{Binding Talla}"></TextBox>
+                <Label>▪ CANTIDAD:</Label>
+                <TextBox Text="{Binding Cantidad}"></TextBox>
+                <Label>▪ FECHA DE LLEGADA:</Label>
+                <TextBox Text="{Binding FechaLlegada}"></TextBox>
+                <Label FontSize="11" Margin="0,15,0,0">Ingresa, modifica o elimina algún producto de la mercancia nueva recibida.</Label>
+            </StackPanel>
+        </Border>
+    </DockPanel>
+</Window>

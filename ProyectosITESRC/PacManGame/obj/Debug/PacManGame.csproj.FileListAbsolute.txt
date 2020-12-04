@@ -1,0 +1,17 @@
+C:\Users\Usuario\source\repos\PacManGame\bin\Debug\PacManGame.exe.config
+C:\Users\Usuario\source\repos\PacManGame\bin\Debug\PacManGame.exe
+C:\Users\Usuario\source\repos\PacManGame\bin\Debug\PacManGame.pdb
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.csprojAssemblyReference.cache
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\MainWindow.g.cs
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\App.g.cs
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame_MarkupCompile.cache
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame_MarkupCompile.lref
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\MainWindow.baml
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.g.resources
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.Properties.Resources.resources
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.csproj.GenerateResource.cache
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.exe
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\PacManGame.pdb
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\Test.g.cs
+C:\Users\Usuario\source\repos\PacManGame\obj\Debug\Test.baml
