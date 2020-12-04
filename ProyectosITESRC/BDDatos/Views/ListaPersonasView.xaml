@@ -1,0 +1,56 @@
+﻿<Window x:Class="BDDatos.Views.ListaPersonasView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDatos.Views"
+        mc:Ignorable="d"
+        Title="ListaPersonasView" Height="450" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="#09142E" Height="65">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" CornerRadius="20" Background="#09142E" Height="43" Width="300" BorderBrush="White" BorderThickness="3">
+                <TextBlock Text="LISTA DE PERSONAS" Foreground="White" VerticalAlignment="Center" Margin="50,0,0,0" FontFamily="Gotham" FontSize="21" FontWeight="Bold"></TextBlock>
+            </Border>
+            <Ellipse Fill="#09142E" Margin="25,0,0,0" HorizontalAlignment="Left" Height="50" Width="50" Stroke="White" StrokeThickness="3"></Ellipse>
+            <Image Source="/Images/list.png" Height="25" HorizontalAlignment="Left" Margin="37,0,0,0"></Image>
+            <UniformGrid Columns="2" VerticalAlignment="Center" Grid.Column="1">
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,-20,0">
+                    <Image Source="/Images/standing-up-man-.png" Height="35"></Image>
+                    <TextBlock Foreground="White" VerticalAlignment="Center" FontFamily="IMPACT" FontSize="25" Text="{Binding Hombres, StringFormat='Hombres{0}'}"></TextBlock>
+                </WrapPanel>
+                <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,50,0">
+                    <Image Source="/Images/girl.png" Height="35"></Image>
+                    <TextBlock Foreground="White" VerticalAlignment="Center" FontFamily="IMPACT" FontSize="25" Text="{Binding Mujeres,StringFormat='Mujeres{0}'}"></TextBlock>
+                </WrapPanel>
+            </UniformGrid>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Background="#394C62" Height="60" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0">Agregue, elimine o edite a una persona.</TextBlock>
+            <WrapPanel HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                <Image Source="/Images/new-user.png" Height="43" Margin="10,0,10,0"></Image>
+                <Button Command="{Binding Eliminar}" CommandParameter="{Binding ElementName=dgtPersonas, Path=SelectedItem}">
+                    <Image Source="/Images/remove-user.png" Height="43" Margin="10,0,10,0"></Image>
+                </Button>
+                <Image Source="/Images/boton-editar.png" Height="43" Margin="10,0,10,0"></Image>
+            </WrapPanel>
+        </Grid>
+        <DataGrid Margin="20" Name="dgtPersonas" ItemsSource="{Binding Personas}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False">
+            <DataGrid.Effect>
+                <DropShadowEffect Opacity="0.15" BlurRadius="13" ShadowDepth="7"/>
+            </DataGrid.Effect>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" Width="0.6*" Binding="{Binding nombre}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Edad" Width="0.3*" Binding="{Binding edad}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Género" Width="0.3*" Binding="{Binding genero}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,48 @@
+﻿<Window x:Class="BDDatos.Views.DatosPersonaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BDDatos.Views"
+        mc:Ignorable="d"
+        Title="DatosPersonaView" Height="450" Width="500">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="#09142E" Height="65">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0" CornerRadius="20" Background="#09142E" Height="43" Width="335" BorderBrush="White" BorderThickness="3">
+                <TextBlock Text="DATOS DE LA PERSONA" Foreground="White" VerticalAlignment="Center" Margin="50,0,0,0" FontFamily="Gotham" FontSize="21" FontWeight="Bold"></TextBlock>
+            </Border>
+            <Ellipse Fill="#09142E" Margin="25,0,0,0" HorizontalAlignment="Left" Height="50" Width="50" Stroke="White" StrokeThickness="3"></Ellipse>
+            <Image Source="/Images/new-user.png" Height="25" HorizontalAlignment="Left" Margin="37,0,0,0"></Image>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom" Background="#394C62" Height="60" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="Wrap" FontFamily="Arial" Foreground="White" FontSize="16" VerticalAlignment="Center" Margin="15,0,0,0">Agregue los datos personales.</TextBlock>
+            <WrapPanel HorizontalAlignment="Right" Grid.Column="1" Margin="0,0,20,0" VerticalAlignment="Center">
+                <Image Source="/Images/boton-editar.png" Height="43" Margin="10,0,10,0"></Image>
+            </WrapPanel>
+        </Grid>
+        <Border CornerRadius="15" BorderBrush="#09142E" BorderThickness="3" Margin="10">
+        <StackPanel Margin="10">
+                <StackPanel.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontFamily" Value="Gotham"></Setter>
+                        <Setter Property="FontSize" Value="15"></Setter>
+                        <Setter Property="Margin" Value="0,10,0,0"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+            <Label>Nombre completo:</Label>
+            <TextBox></TextBox>
+            <Label>Edad:</Label>
+            <TextBox></TextBox>
+            <Label>Género:</Label>
+            <ComboBox></ComboBox>
+        </StackPanel>
+        </Border>
+    </DockPanel>
+</Window>
