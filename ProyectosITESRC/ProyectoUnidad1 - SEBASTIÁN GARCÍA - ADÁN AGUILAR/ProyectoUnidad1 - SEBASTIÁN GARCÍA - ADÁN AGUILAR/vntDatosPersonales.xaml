@@ -1,0 +1,64 @@
+﻿<Window x:Class="ProyectoUnidad1___SEBASTIÁN_GARCÍA___ADÁN_AGUILAR.vntDatosPersonales"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoUnidad1___SEBASTIÁN_GARCÍA___ADÁN_AGUILAR"
+        mc:Ignorable="d"
+        Title="vntDatosPersonales" Height="390" Width="750" Style="{StaticResource BackgorundsVentanas}">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" FontSize="20" HorizontalAlignment="Center" Margin="10,10,0,0" FontWeight="Bold">DATOS PERSONALES</TextBlock>
+        <TextBlock DockPanel.Dock="Bottom" Background="DarkOrange" Height="25" FontSize="15" Padding="3">Añada la información personal de los empleados.</TextBlock>
+        <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Width="130" Height="30">Aceptar</Button>
+        <Border BorderBrush="LightGray" BorderThickness="2" CornerRadius="20" Padding="10" Margin="10">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition ></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" Grid.Row="0" Style="{StaticResource EstiloEmpleados}">Nombre</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="1" Style="{StaticResource EstiloEmpleados}">Fecha de Nacimiento</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="2" Style="{StaticResource EstiloEmpleados}">Nacionalidad</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="3" Style="{StaticResource EstiloEmpleados}">Tipo de sangre</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="4" Style="{StaticResource EstiloEmpleados}">Teléfono</TextBlock>
+                <TextBlock Grid.Column="0" Grid.Row="5" Style="{StaticResource EstiloEmpleados}">Género</TextBlock>
+
+                <TextBox Grid.Column="1" Grid.Row="0" IsEnabled="False" Style="{StaticResource EstiloTextBox}">Adán Daniel Aguilar Romero</TextBox>
+                <DatePicker Grid.Column="1" Grid.Row="1" Height="30"></DatePicker>
+                <TextBox Grid.Column="1" Grid.Row="2" Style="{StaticResource EstiloTextBox}">Mexicana</TextBox>
+                <ComboBox Grid.Column="1" Grid.Row="3" Style="{StaticResource EstiloCombo}">
+                    <ComboBoxItem IsSelected="True">- Seleccione el tipo de sangre</ComboBoxItem>
+                    <ComboBoxItem>A+</ComboBoxItem>
+                    <ComboBoxItem>B+</ComboBoxItem>
+                    <ComboBoxItem>AB+</ComboBoxItem>
+                    <ComboBoxItem>O+</ComboBoxItem>
+                    <ComboBoxItem>A-</ComboBoxItem>
+                    <ComboBoxItem>B-</ComboBoxItem>
+                    <ComboBoxItem>AB-</ComboBoxItem>
+                    <ComboBoxItem>O-</ComboBoxItem>
+                </ComboBox>
+                <TextBox Grid.Column="1" Grid.Row="4" Style="{StaticResource EstiloTextBox}">861-110-8183</TextBox>
+                <WrapPanel Grid.Column="1" Grid.Row="5" VerticalAlignment="Center">
+                    <WrapPanel.Resources>
+                        <Style TargetType="RadioButton">
+                            <Setter Property="Foreground" Value="White"></Setter>
+                            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                            <Setter Property="FontSize" Value="20"></Setter>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <RadioButton>Femenino</RadioButton>
+                    <RadioButton Margin="20,0,0,0">Masculino</RadioButton>
+                </WrapPanel>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

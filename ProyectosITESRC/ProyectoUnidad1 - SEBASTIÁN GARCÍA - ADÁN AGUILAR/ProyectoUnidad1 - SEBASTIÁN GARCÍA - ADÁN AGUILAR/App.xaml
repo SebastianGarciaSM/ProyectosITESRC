@@ -1,0 +1,39 @@
+﻿<Application x:Class="ProyectoUnidad1___SEBASTIÁN_GARCÍA___ADÁN_AGUILAR.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ProyectoUnidad1___SEBASTIÁN_GARCÍA___ADÁN_AGUILAR"
+             StartupUri="vntDatosPersonales.xaml">
+    <Application.Resources>
+        <Style x:Key="BackgorundsVentanas" TargetType="Window">
+            <Setter Property="Background" Value="LightSlateGray"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Arial"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="EstiloDatos">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="EstiloEmpleados">
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="Padding" Value="3"></Setter>
+        </Style>
+        <Style x:Key="EstiloTextBlock" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style x:Key="EstiloTextBox" TargetType="TextBox">
+            <Setter Property="FontSize" Value="18"></Setter>
+            <Setter Property="Width" Value="auto"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+        <Style x:Key="EstiloCombo" TargetType="ComboBox">
+            <Setter Property="Height" Value="25"></Setter>
+            <Setter Property="Width" Value="auto"></Setter>
+        </Style>
+    </Application.Resources>
+</Application>
